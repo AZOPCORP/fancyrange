@@ -1,0 +1,109 @@
+.ctrlBar {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #070301;
+  border: 1px solid rgba(247, 120, 40, 0.2);
+}
+
+.ctrlBar:after {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 100%;
+  color: #A22D0C;
+  font-size: 10px;
+  vertical-align: center;
+  padding: auto;
+  content: attr(data-content);
+}
+
+.valBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #F77828;
+}
+
+.valBarminus {
+  position: absolute;
+  display: inline;
+  top: 0;
+  right: 50%;
+  width: 0;
+  max-width: 50%;
+  height: 100%;
+  background-color: #F77828;
+}
+
+.valBarplus {
+  position: absolute;
+  display: inline;
+  top: 0;
+  left: 50%;
+  width: 0;
+  max-width: 50%;
+  height: 100%;
+  background-color: #F77828;
+}
+
+.ctrlBar-vertical {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 100%;
+  backgroud-color: #070301;
+  border: 1px solid rgba(247, 120, 40, 0.2);
+}
+
+.ctrlBar-vertical:after {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 100%;
+  top: 0;
+  color: #A22D0C;
+  font-size: 10px;
+  vertical-align: center;
+  padding: auto;
+  content: attr(data-content);
+  transform: rotate(90deg);
+  white-space: nowrap;
+}
+
+.valBar-vertical {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F77828;
+}
+
+.valBarminus-vertical {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 50%;
+  height: 0;
+  background-color: #F77828;
+}
+
+.valBarplus-vertical {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  width: 100%;
+  max-height: 50%;
+  height: 0;
+  background-color: #F77828;
+}
