@@ -81,6 +81,22 @@
                             updatebar(e.pageX);
                         }
                     });
+                     ctrlbar.on('touchstart',function(e){
+                         isDrag = true;
+                        updatebar(e.originalEvent.touches[0].pageX);
+                    });
+                    $(document).on('touchmove.rem ', function(e) {
+                          if (isDrag) {
+                            updatebar(e.originalEvent.touches[0].pageX);
+                              
+                        }
+                    });
+                      $(document).on('touchmove.rem ', function(e) {
+                        if (isDrag) {
+                            isDrag = false;
+                            updatebar(e.originalEvent.touches[0].pageX);
+                        }
+                    });
 
 
 
@@ -125,6 +141,22 @@
                     $(document).mousemove(function(e) {
                         if (isDrag) {
                             updatebar(e.pageX);
+                        }
+                    });
+                     ctrlbar.on('touchstart',function(e){
+                         isDrag = true;
+                        updatebar(e.originalEvent.touches[0].pageX);
+                    });
+                    $(document).on('touchmove.rem ', function(e) {
+                          if (isDrag) {
+                            updatebar(e.originalEvent.touches[0].pageX);
+                              
+                        }
+                    });
+                      $(document).on('touchmove.rem ', function(e) {
+                        if (isDrag) {
+                            isDrag = false;
+                            updatebar(e.originalEvent.touches[0].pageX);
                         }
                     });
 
@@ -197,6 +229,23 @@
                             updatebar(e.pageY);
                         }
                     });
+                    
+                    ctrlbar.on('touchstart',function(e){
+                         isDrag = true;
+                        updatebar(e.originalEvent.touches[0].pageY);
+                    });
+                    $(document).on('touchmove.rem ', function(e) {
+                          if (isDrag) {
+                            updatebar(e.originalEvent.touches[0].pageY);
+                              
+                        }
+                    });
+                      $(document).on('touchmove.rem ', function(e) {
+                        if (isDrag) {
+                            isDrag = false;
+                            updatebar(e.originalEvent.touches[0].pageY);
+                        }
+                    });
 
                 } else {
                     $('<div class="ctrlBar-vertical"><div class="valBar-vertical"></div></div>').insertAfter($(this))
@@ -238,6 +287,22 @@
                     $(document).mousemove(function(e) {
                         if (isDrag) {
                             updatebar(e.pageY);
+                        }
+                    });
+                     ctrlbar.on('touchstart',function(e){
+                         isDrag = true;
+                        updatebar(e.originalEvent.touches[0].pageY);
+                    });
+                    $(document).on('touchmove.rem ', function(e) {
+                          if (isDrag) {
+                            updatebar(e.originalEvent.touches[0].pageY);
+                              
+                        }
+                    });
+                      $(document).on('touchmove.rem ', function(e) {
+                        if (isDrag) {
+                            isDrag = false;
+                            updatebar(e.originalEvent.touches[0].pageY);
                         }
                     });
                 }
