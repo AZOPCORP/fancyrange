@@ -82,16 +82,19 @@
                         }
                     });
                      ctrlbar.on('touchstart',function(e){
+                         e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageX);
                     });
                     $(document).on('touchmove.rem ', function(e) {
+                        e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageX);
                               
                         }
                     });
                       $(document).on('touchmove.rem ', function(e) {
+                          e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageX);
@@ -144,16 +147,19 @@
                         }
                     });
                      ctrlbar.on('touchstart',function(e){
+                         e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageX);
                     });
                     $(document).on('touchmove.rem ', function(e) {
+                        e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageX);
                               
                         }
                     });
                       $(document).on('touchmove.rem ', function(e) {
+                          e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageX);
@@ -231,16 +237,19 @@
                     });
                     
                     ctrlbar.on('touchstart',function(e){
+                        e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageY);
                     });
                     $(document).on('touchmove.rem ', function(e) {
+                        e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageY);
                               
                         }
                     });
                       $(document).on('touchmove.rem ', function(e) {
+                          e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageY);
@@ -290,16 +299,19 @@
                         }
                     });
                      ctrlbar.on('touchstart',function(e){
+                         e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageY);
                     });
                     $(document).on('touchmove.rem ', function(e) {
+                        e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageY);
                               
                         }
                     });
                       $(document).on('touchmove.rem ', function(e) {
+                          e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageY);
