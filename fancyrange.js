@@ -377,6 +377,41 @@
             });
 
             $(this).trigger("change")
+                  $(this).next().bind('DOMMouseScroll', function(e) {
+                 var current= Number(rangeElem.val());
+                if (e.originalEvent.detail > 0) {
+                     rangeElem.val(current-step)
+                  if(current<=minval){
+                    rangeElem.val(minval)
+                  }
+                } else {
+                    rangeElem.val(current+step)
+                  if(current>=maxval){
+                    rangeElem.val(maxval)
+                  }
+                }
+                           rangeElem.trigger('change')
+                             console.log(current)
+                return false;
+            });
+           $(this).next().bind('mousewheel', function(e) {
+              var current= Number(rangeElem.val());
+                if (e.originalEvent.wheelDelta < 0) {
+                  rangeElem.val(current-step)
+                  if(Number(current)<=minval){
+                    rangeElem.val(minval)
+                  }
+              
+                } else {
+                    rangeElem.val(current+step)
+                  if(current>=maxval){
+                    rangeElem.val(maxval)
+                  }
+                }
+              console.log(rangeElem.val())
+               rangeElem.trigger('change')
+                return false;
+});
         });
     };
 
