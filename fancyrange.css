@@ -16,7 +16,7 @@
   width: 100%;
   color: #A22D0C;
   font-size: 10px;
-  vertical-align: center;
+  vertical-align: auto;
   padding: auto;
   content: attr(data-content);
 }
