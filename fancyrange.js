@@ -86,14 +86,14 @@
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageX);
                     });
-                    $(document).on('touchmove.rem ', function(e) {
+                    $(document).on('touchmove', function(e) {
                         e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageX);
                               
                         }
                     });
-                      $(document).on('touchmove.rem ', function(e) {
+                      $(document).on('touchend ', function(e) {
                           e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
@@ -151,14 +151,14 @@
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageX);
                     });
-                    $(document).on('touchmove.rem ', function(e) {
+                    $(document).on('touchmove ', function(e) {
                         e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageX);
                               
                         }
                     });
-                      $(document).on('touchmove.rem ', function(e) {
+                      $(document).on('touchend ', function(e) {
                           e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
@@ -241,14 +241,14 @@
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageY);
                     });
-                    $(document).on('touchmove.rem ', function(e) {
+                    $(document).on('touchmove', function(e) {
                         e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageY);
                               
                         }
                     });
-                      $(document).on('touchmove.rem ', function(e) {
+                      $(document).on('touchend ', function(e) {
                           e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
@@ -303,14 +303,14 @@
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageY);
                     });
-                    $(document).on('touchmove.rem ', function(e) {
+                    $(document).on('touchmove ', function(e) {
                         e.preventDefault();
                           if (isDrag) {
                             updatebar(e.originalEvent.touches[0].pageY);
                               
                         }
                     });
-                      $(document).on('touchmove.rem ', function(e) {
+                      $(document).on('touchend ', function(e) {
                           e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
