@@ -323,7 +323,7 @@
 
             }
 
-            rangeElem.on("input change", function() {
+                  rangeElem.on("input change", function() {
                 if (mode == "normal") {
                     if (minval < 0) {
                         var val = Number(rangeElem.val());
@@ -343,7 +343,7 @@
 
                     } else {
                         var val = Number(rangeElem.val());
-                        var percentage = val * maxval / 100;
+                        var percentage = 100 * (val / maxval);
                         valbar.css('width', percentage + '%');
                     }
                 } else if (mode == "vertical") {
@@ -356,7 +356,7 @@
                             valbarminus.css('height', percentage + '%');
                             valbarplus.css("height", 0)
                         } else if (val > 0) {
-                            var percentage = val * maxval / 200;
+                            var percentage = 50 * val/maxval;
                             valbarplus.css('height', percentage + '%');
                             valbarminus.css("height", 0)
                         } else if (val == 0) {
@@ -366,13 +366,14 @@
 
                     } else {
                         var val = Number(rangeElem.val());
-                        var percentage = val * maxval / 100;
+                        var percentage = 100 * (val / maxval);
                         valbar.css('height', percentage + '%');
+                      console.log(percentage)
                     }
 
 
                 }
-                ctrlbar.attr('data-content', label + " " + rangeElem.val());
+              ctrlbar.attr('data-content',label+" "+rangeElem.val()); 
             });
 
             $(this).trigger("change")
