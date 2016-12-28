@@ -67,24 +67,31 @@
                     };
 
                     ctrlbar.mousedown(function(e) {
+                        e.preventDefault();
                         isDrag = true;
                         updatebar(e.pageX);
+                        return false;
                     });
                     $(document).mouseup(function(e) {
+                            e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.pageX);
                         }
+                        return false;
                     });
                     $(document).mousemove(function(e) {
+                            e.preventDefault();
                         if (isDrag) {
                             updatebar(e.pageX);
                         }
+                        return false;
                     });
                      ctrlbar.on('touchstart',function(e){
                          e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageX);
+                         return false;
                     });
                     $(document).on('touchmove', function(e) {
                         e.preventDefault();
@@ -92,6 +99,7 @@
                             updatebar(e.originalEvent.touches[0].pageX);
                               
                         }
+                        return false;
                     });
                       $(document).on('touchend ', function(e) {
                           e.preventDefault();
@@ -99,6 +107,7 @@
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageX);
                         }
+                          return false;
                     });
 
 
@@ -132,24 +141,31 @@
                     };
 
                     ctrlbar.mousedown(function(e) {
+                        e.preventDefault();
                         isDrag = true;
                         updatebar(e.pageX);
+                        return false;
                     });
                     $(document).mouseup(function(e) {
+                        e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.pageX);
                         }
+                        return false;
                     });
                     $(document).mousemove(function(e) {
+                        e.preventDefault();
                         if (isDrag) {
                             updatebar(e.pageX);
                         }
+                        return false;
                     });
                      ctrlbar.on('touchstart',function(e){
                          e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageX);
+                         return false;
                     });
                     $(document).on('touchmove ', function(e) {
                         e.preventDefault();
@@ -157,6 +173,7 @@
                             updatebar(e.originalEvent.touches[0].pageX);
                               
                         }
+                        return false;
                     });
                       $(document).on('touchend ', function(e) {
                           e.preventDefault();
@@ -164,6 +181,7 @@
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageX);
                         }
+                          return false;
                     });
 
 
@@ -221,25 +239,32 @@
                     };
 
                     ctrlbar.mousedown(function(e) {
+                        e.preventDefault();   
                         isDrag = true;
                         updatebar(e.pageY);
+                        return false;
                     });
                     $(document).mouseup(function(e) {
+                        e.preventDefault();
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.pageY);
                         }
+                        return false;
                     });
                     $(document).mousemove(function(e) {
+                        e.preventDefault();
                         if (isDrag) {
                             updatebar(e.pageY);
                         }
+                        return false;
                     });
                     
                     ctrlbar.on('touchstart',function(e){
                         e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageY);
+                        return false;
                     });
                     $(document).on('touchmove', function(e) {
                         e.preventDefault();
@@ -247,6 +272,7 @@
                             updatebar(e.originalEvent.touches[0].pageY);
                               
                         }
+                        return false;
                     });
                       $(document).on('touchend ', function(e) {
                           e.preventDefault();
@@ -254,6 +280,7 @@
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageY);
                         }
+                        return false;  
                     });
 
                 } else {
@@ -284,24 +311,31 @@
                     };
 
                     ctrlbar.mousedown(function(e) {
+                        e.preventDefault();
                         isDrag = true;
                         updatebar(e.pageY);
+                        return false;
                     });
                     $(document).mouseup(function(e) {
+                        e.preventDefault();  
                         if (isDrag) {
                             isDrag = false;
                             updatebar(e.pageY);
                         }
+                        return false;
                     });
                     $(document).mousemove(function(e) {
+                        e.preventDefault();   
                         if (isDrag) {
                             updatebar(e.pageY);
                         }
+                        return false;
                     });
                      ctrlbar.on('touchstart',function(e){
                          e.preventDefault();
                          isDrag = true;
                         updatebar(e.originalEvent.touches[0].pageY);
+                        return false; 
                     });
                     $(document).on('touchmove ', function(e) {
                         e.preventDefault();
@@ -309,6 +343,7 @@
                             updatebar(e.originalEvent.touches[0].pageY);
                               
                         }
+                        return false;
                     });
                       $(document).on('touchend ', function(e) {
                           e.preventDefault();
@@ -316,6 +351,7 @@
                             isDrag = false;
                             updatebar(e.originalEvent.touches[0].pageY);
                         }
+                          return false;
                     });
                 }
 
@@ -368,7 +404,7 @@
                         var val = Number(rangeElem.val());
                         var percentage = 100 * (val / maxval);
                         valbar.css('height', percentage + '%');
-                      console.log(percentage)
+              
                     }
 
 
@@ -391,7 +427,7 @@
                   }
                 }
                            rangeElem.trigger('change')
-                             console.log(current)
+                  
                 return false;
             });
            $(this).next().bind('mousewheel', function(e) {
@@ -408,7 +444,6 @@
                     rangeElem.val(maxval)
                   }
                 }
-              console.log(rangeElem.val())
                rangeElem.trigger('change')
                 return false;
 });
