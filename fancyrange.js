@@ -12,17 +12,18 @@
             var maxval = Number($(this).prop("max"));
             var step = parseFloat($(this).prop('step')) || 1.0;
             var decimal_digits = 0;
+            var rangeElem;
             var x_str = step.toString().split('.')[1];
-            if (x_str != undefined) {
+            if (x_str !== undefined) {
                 decimal_digits = x_str.length;
             }
 
             if (mode == "normal") {
 
-                var rangeElem = $(this);
+                 rangeElem = $(this);
 
                 if (minval < 0) {
-                    $('<div class="ctrlBar" ><div class="valBarminus"></div><div class="valBarplus"></div></div>').insertAfter($(this))
+                    $('<div class="ctrlBar" ><div class="valBarminus"></div><div class="valBarplus"></div></div>').insertAfter($(this));
                     var ctrlbar = $(this).next();
                     var valbarminus = ctrlbar.find(".valBarminus");
                     var valbarplus = ctrlbar.find(".valBarplus");
@@ -44,22 +45,22 @@
                             var percentminus = 50 - percentage;
 
                             valbarminus.css('width', percentminus + '%');
-                            valbarplus.css('width', 0)
+                            valbarplus.css('width', 0);
                             var pc = (minval * percentminus / 50).toFixed(decimal_digits);
-                            rangeElem.val(pc)
+                            rangeElem.val(pc);
                             ctrlbar.attr('data-content', label + " " + pc);
                         } else if (percentage > 50) {
                             var percentplus = percentage - 50;
 
                             valbarplus.css('width', percentplus + '%');
-                            valbarminus.css('width', 0)
+                            valbarminus.css('width', 0);
                             var pc = (maxval * percentplus / 50).toFixed(decimal_digits);
-                            rangeElem.val(pc)
+                            rangeElem.val(pc);
                             ctrlbar.attr('data-content', label + " " + pc);
                         } else if (percentage == 50) {
                             valbarplus.css('width', "1px");
                             valbarminus.css('width', "1px");
-                            rangeElem.val(0)
+                            rangeElem.val(0);
                             ctrlbar.attr('data-content', label + " " + 0);
                         }
 
@@ -114,10 +115,10 @@
 
                 } else {
 
-                    $('<div class="ctrlBar"><div class="valBar"></div></div>').insertAfter($(this))
+                    $('<div class="ctrlBar"><div class="valBar"></div></div>').insertAfter($(this));
                     var ctrlbar = $(this).next();
                     var valbar = ctrlbar.find(".valBar");
-                    var pseudoelem = $(this).next()
+
 
 
                     var updatebar = function(x) {
@@ -133,10 +134,10 @@
                             percentage = 0;
                         }
 
-                        //Update progress bar and video currenttime
+           
                         valbar.css('width', percentage + '%');
                         var pc = (maxval * percentage / 100).toFixed(decimal_digits);
-                        rangeElem.val(pc)
+                        rangeElem.val(pc);
                         ctrlbar.attr('data-content', label + " " + pc);
                     };
 
@@ -190,10 +191,10 @@
                 }
             } else if (mode == "vertical") {
 
-                var rangeElem = $(this);
+                 rangeElem = $(this);
 
                 if (minval < 0) {
-                    $('<div class="ctrlBar-vertical"><div class="valBarplus-vertical"></div><div class="valBarminus-vertical"></div></div>').insertAfter($(this))
+                    $('<div class="ctrlBar-vertical"><div class="valBarplus-vertical"></div><div class="valBarminus-vertical"></div></div>').insertAfter($(this));
                     var ctrlbar = $(this).next();
                     var valbarminus = ctrlbar.find(".valBarminus-vertical");
                     var valbarplus = ctrlbar.find(".valBarplus-vertical");
@@ -216,22 +217,22 @@
                             var percentminus = 50 - percentage;
 
                             valbarminus.css('height', percentminus + '%');
-                            valbarplus.css('height', 0)
+                            valbarplus.css('height', 0);
                             var pc = (minval * percentminus / 50).toFixed(decimal_digits);
-                            rangeElem.val(pc)
+                            rangeElem.val(pc);
                             ctrlbar.attr('data-content', label + " " + pc);
                         } else if (percentage > 50) {
                             var percentplus = percentage - 50;
 
                             valbarplus.css('height', percentplus + '%');
-                            valbarminus.css('height', 0)
-                            var pc = (maxval * percentplus / 50).toFixed(decimal_digits)
-                            rangeElem.val(pc)
+                            valbarminus.css('height', 0);
+                            var pc = (maxval * percentplus / 50).toFixed(decimal_digits);
+                            rangeElem.val(pc);
                             ctrlbar.attr('data-content', label + " " + pc);
                         } else if (percentage == 50) {
                             valbarplus.css('height', "1px");
                             valbarminus.css('height', "1px");
-                            rangeElem.val(0)
+                            rangeElem.val(0);
                             ctrlbar.attr('data-content', label + " " + 0);
                         }
 
@@ -284,7 +285,7 @@
                     });
 
                 } else {
-                    $('<div class="ctrlBar-vertical"><div class="valBar-vertical"></div></div>').insertAfter($(this))
+                    $('<div class="ctrlBar-vertical"><div class="valBar-vertical"></div></div>').insertAfter($(this));
                     var ctrlbar = $(this).next();
                     var valbar = ctrlbar.find(".valBar-vertical");
 
@@ -303,10 +304,10 @@
                             percentage = 0;
                         }
 
-                        //Update progress bar and video currenttime
+                  
                         valbar.css('height', percentage + '%');
                         var pc = (maxval * percentage / 100).toFixed(decimal_digits);
-                        rangeElem.val(pc)
+                        rangeElem.val(pc);
                         ctrlbar.attr('data-content', label + " " + pc);
                     };
 
@@ -367,12 +368,12 @@
                         if (val < 0) {
                             var percentage = val / minval * 50;
                             valbarminus.css('width', percentage + '%');
-                            valbarplus.css("width", 0)
+                            valbarplus.css("width", 0);
                         } else if (val > 0) {
                             var percentage = val * maxval / 200;
                             valbarplus.css('width', percentage + '%');
-                            valbarminus.css("width", 0)
-                        } else if (val == 0) {
+                            valbarminus.css("width", 0);
+                        } else if (val === 0) {
                             valbarplus.css('width', "1px");
                             valbarminus.css('width', "1px");
                         }
@@ -390,12 +391,12 @@
                         if (val < 0) {
                             var percentage = val / minval * 50;
                             valbarminus.css('height', percentage + '%');
-                            valbarplus.css("height", 0)
+                            valbarplus.css("height", 0);
                         } else if (val > 0) {
                             var percentage = 50 * val/maxval;
                             valbarplus.css('height', percentage + '%');
-                            valbarminus.css("height", 0)
-                        } else if (val == 0) {
+                            valbarminus.css("height", 0);
+                        } else if (val === 0) {
                             valbarplus.css('height', "1px");
                             valbarminus.css('height', "1px");
                         }
@@ -412,39 +413,39 @@
               ctrlbar.attr('data-content',label+" "+rangeElem.val()); 
             });
 
-            $(this).trigger("change")
+            $(this).trigger("change");
                   $(this).next().bind('DOMMouseScroll', function(e) {
                  var current= Number(rangeElem.val());
                 if (e.originalEvent.detail > 0) {
-                     rangeElem.val(current-step)
+                     rangeElem.val(current-step);
                   if(current<=minval){
-                    rangeElem.val(minval)
+                    rangeElem.val(minval);
                   }
                 } else {
-                    rangeElem.val(current+step)
+                    rangeElem.val(current+step);
                   if(current>=maxval){
-                    rangeElem.val(maxval)
+                    rangeElem.val(maxval);
                   }
                 }
-                           rangeElem.trigger('change')
+                           rangeElem.trigger('change');
                   
                 return false;
             });
            $(this).next().bind('mousewheel', function(e) {
               var current= Number(rangeElem.val());
                 if (e.originalEvent.wheelDelta < 0) {
-                  rangeElem.val(current-step)
+                  rangeElem.val(current-step);
                   if(Number(current)<=minval){
-                    rangeElem.val(minval)
+                    rangeElem.val(minval);
                   }
               
                 } else {
-                    rangeElem.val(current+step)
+                    rangeElem.val(current+step);
                   if(current>=maxval){
-                    rangeElem.val(maxval)
+                    rangeElem.val(maxval);
                   }
                 }
-               rangeElem.trigger('change')
+               rangeElem.trigger('change');
                 return false;
 });
         });
