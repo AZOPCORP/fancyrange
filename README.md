@@ -10,7 +10,7 @@ Jquery plugin to replace range inputs with a fancy slider
 
 #usage
 
-load fancyknob.css in the document head
+load fancyrange.css in the document head
 
 load jquery
 
